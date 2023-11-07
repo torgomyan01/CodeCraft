@@ -5,7 +5,6 @@ const pageName = urlParams.get('page_name');
 const githubLink = 'https://torgomyan01.github.io';
 const key = 'kjk';
 
-
 if (getName && pageName) {
     const decodeName = decodingString(getName);
 
@@ -17,7 +16,7 @@ if (getName && pageName) {
 
 
 function startAppendDis(url) {
-    const arr = Array.from({length: 150}).map((item) => {
+    const arr = Array.from({length: 350}).map((item) => {
         return keyGenerator();
     });
     let str = '';
@@ -33,6 +32,8 @@ function startAppendDis(url) {
              data-local-text="ok"
              >
         `
+
+
 
         if(index === arr.length - 1){
             str = `${str}
@@ -104,5 +105,8 @@ function decodingString(codingString) {
     return newDecodingArr;
 }
 
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.querySelector('iframe').addEventListener('contextmenu', event => event.preventDefault());
 
 // console.log(decodingString('Aj-WNrj-NRtj-xJhj-SSaj-MElj-evlj-fz-j-TRSj-Rqyj-8ynj-Jiej-VPrj-uogj-Juyj-MH'))
